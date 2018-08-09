@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding=utf-8 -*-
+
 import numpy as np
 from computeCost import compute_cost
 
@@ -10,3 +13,4 @@ def gradient_descent(x, y, theta, alpha, iterations):
         theta = theta - (alpha / m) * np.dot(x.T, temp_a)
         j_history.append(compute_cost(x, y, theta))
         iterations -= 1
+    return theta
