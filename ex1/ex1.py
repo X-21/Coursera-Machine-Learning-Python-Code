@@ -75,7 +75,7 @@ if __name__ == '__main__':
 
     plt.plot(X[:, 1], np.dot(X, theta), '-', label="Linear regression")
     plt.legend()
-    plt.pause(0.5)
+    plt.pause(3)
     plt.close()
 
     predict1 = np.dot(np.array(([1, 3.5])), theta)
@@ -110,7 +110,7 @@ if __name__ == '__main__':
     ax.plot_surface(theta0_vals, theta1_vals, J_vals, cmap="jet")
     plt.xlabel(r'$\theta_0$')
     plt.ylabel(r'$\theta_1$')
-    plt.pause(0.5)
+    plt.pause(3)
     plt.close()
 
     plt.figure()
@@ -118,5 +118,5 @@ if __name__ == '__main__':
     plt.plot(theta[0], theta[1], "rx", markersize=20)
     plt.xlabel(r'$\theta_0$')
     plt.ylabel(r'$\theta_1$', rotation=0)
-    plt.pause(0.5)
+    plt.pause(3)
     plt.close()
