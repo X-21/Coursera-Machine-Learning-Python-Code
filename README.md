@@ -46,3 +46,9 @@ Training data with decision boundary
 #### ex2_LR_2 Regularized Logistic Regression
 Training data with decision boundary (λ = 1)
 ![image_ex2_LR_2](https://github.com/X-21/ML-EX-Python/blob/master/resources/image/ex2_LR_2.png)
+ 
+---
+### ex3
+#### ex3_1 Multi-class Classification(MNIST)
+![image_ex3_1](https://github.com/X-21/ML-EX-Python/blob/master/resources/image/ex3_1.png)
+</br>
