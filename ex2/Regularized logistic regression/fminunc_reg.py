@@ -6,7 +6,7 @@ import scipy.optimize as sciopt
 
 
 def my_fminunc_reg(x, y, theta, reg_lambda):
-    return sciopt.minimize(fun=cost_function, x0=theta, args=(x, y, reg_lambda), method="SLSQP", jac=gradient)
+    return sciopt.minimize(fun=cost_function, x0=theta, args=(x, y, reg_lambda), method="TNC", jac=gradient)
 
 
 def gradient(theta, x, y, reg_lambda):
