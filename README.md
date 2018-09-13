@@ -51,4 +51,20 @@ Training data with decision boundary (λ = 1)
 ### ex3
 #### ex3_1 Multi-class Classification(MNIST)
 ![image_ex3_1](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex3_1.png)
+
+ 
+---
+### ex5
+#### ex5_1 Polynomial Regression Fit
+![image_ex5_1](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex5_1.png)
+</br>
+</br>
+</br>
+#### ex5_2 Polynomial Regression Learning Curve
+![image_ex5_2](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex5_2.png)
+</br>
+</br>
+</br>
+#### ex5_3 Regularization and Bias/Variance
+![image_ex5_3](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex5_3.png)
 </br>
