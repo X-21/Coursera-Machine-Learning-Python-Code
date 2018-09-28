@@ -67,4 +67,21 @@ Training data with decision boundary (λ = 1)
 </br>
 #### ex5_3 Regularization and Bias/Variance
 ![image_ex5_3](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex5_3.png)
+
+ 
+---
+### ex6
+#### ex6_1 SVM Decision Boundary with C = 1
+![image_ex6_1](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex6_1.png)
+</br>
+</br>
+</br>
+#### ex6_2  SVM (Gaussian Kernel) Decision Boundary (Example Dataset 2)
+![image_ex6_2](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex6_2.png)
+</br>
+</br>
+</br>
+#### ex6_3  SVM (Gaussian Kernel) Decision Boundary (Example Dataset 3)
+![image_ex6_3](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex6_3.png)
+
 </br>
