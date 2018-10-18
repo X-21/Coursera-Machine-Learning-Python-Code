@@ -84,4 +84,42 @@ Training data with decision boundary (λ = 1)
 #### ex6_3  SVM (Gaussian Kernel) Decision Boundary (Example Dataset 3)
 ![image_ex6_3](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex6_3.png)
 
+
+---
+### ex7
+#### ex7_1 K-means on example dataset
+![image_ex7_1](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_1.png)
+</br>
+</br>
+</br>
+#### ex7_2  Original and reconstructed image (when using K-means to compress the image)
+![image_ex7_2](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_2.png)
+</br>
+</br>
+</br>
+#### ex7_3  PCA - Computed eigenvectors of the dataset
+![image_ex7_3](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_3.png)
+</br>
+</br>
+</br>
+#### ex7_4  The normalized and projected data after PCA
+![image_ex7_4](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_4.png)
+</br>
+</br>
+</br>
+#### ex7_5  Original images of faces and ones reconstructed from only the top 100 principal components
+![image_ex7_5](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_5.png)
+</br>
+</br>
+</br>
+#### ex7_6  PCA for visualization - 3D
+![image_ex7_6](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_6.png)
+</br>
+</br>
+</br>
+#### ex7_7  2D visualization produced using PCA
+![image_ex7_7](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_7.png)
+
+
+
 </br>
