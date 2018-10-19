@@ -36,6 +36,8 @@ if __name__ == '__main__':
     data = load_mat_file('./data/ex8data1.mat')
     # Visualize the example dataset
     X = data['X']
+    Xval = data['Xval']
+    yval = data['yval']
     plt.ion()
     plt.figure()
     plt.scatter(X[:, 0], X[:, 1], marker="x", s=7)
@@ -43,7 +45,6 @@ if __name__ == '__main__':
     plt.xlabel('Latency (ms)')
     plt.ylabel('Throughput (mb/s)')
     plt.pause(0.5)
-    plt.close()
 
     print('Program paused. Press enter to continue.\n')
     # pause_func()
@@ -63,10 +64,15 @@ if __name__ == '__main__':
     p = multivariate_aussian(X, mu, sigma2)
     # Visualize the fit
     visualize_fit(X,  mu, sigma2)
-    plt.xlabel('Latency (ms)')
-    plt.ylabel('Throughput (mb/s)')
+    plt.pause(0.8)
+    plt.close()
 
     print('Program paused. Press enter to continue.\n')
     # pause_func()
 
+    # ================== Part 3: Find Outliers ===================
+    # Now you will find a good epsilon threshold using a cross-validation set
+    # probabilities given the estimated Gaussian distribution
 
+    pval = multivariate_aussian(Xval, mu, sigma2)
+    epsilon,F1 = select_threshold(yval, pval)
