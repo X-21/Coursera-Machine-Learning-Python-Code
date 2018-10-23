@@ -4,7 +4,7 @@
 import numpy as np
 
 
-def multivariate_aussian(x, mu, sigma2):
+def multivariate_gaussian(x, mu, sigma2):
     # p = MULTIVARIATEGAUSSIAN(X, mu, Sigma2) Computes the probability
     # density function of the examples X under the multivariate gaussian
     # distribution with parameters mu and Sigma2. If Sigma2 is a matrix, it is
