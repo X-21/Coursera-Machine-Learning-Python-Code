@@ -5,8 +5,8 @@ import numpy as np
 
 
 def cofi_cost_func(params, y, r, num_users, num_movies, num_features, lambda_co_fi):
-    x = np.reshape(params[0:num_movies * num_features], (num_movies, num_features))
-    theta = np.reshape(params[num_movies * num_features:], (num_users, num_features))
+    x = np.reshape(params[0:num_movies * num_features], (num_movies, num_features), order='F')
+    theta = np.reshape(params[num_movies * num_features:], (num_users, num_features), order='F')
 
     # You need to return the following values correctly
     # j = 0
