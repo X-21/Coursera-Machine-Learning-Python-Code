@@ -121,5 +121,8 @@ Training data with decision boundary (λ = 1)
 ![image_ex7_7](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex7_7.png)
 
 
-
+---
+### ex8
+#### ex8_1 The classified anomalies
+![image_ex8_1](https://github.com/X-21/ML-EX-Python/blob/master/doc/image/ex8_1.png)
 </br>

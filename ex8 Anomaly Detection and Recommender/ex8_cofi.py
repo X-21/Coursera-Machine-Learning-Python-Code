@@ -10,10 +10,8 @@ from scipy.io import loadmat
 from cofiCostFunc import cofi_cost_func
 from checkGradients import check_gradients
 from loadMovieList import load_movie_list
-from estimateGaussian import estimate_gaussian
-from visualizeFit import visualize_fit
-from multivariateGaussian import multivariate_gaussian
-from selectThreshold import select_threshold
+from normalizeRatings import normalize_ratings
+from fminunc_recommender import my_fminunc_rcmd
 
 
 def pause_func():
@@ -142,4 +140,63 @@ if __name__ == '__main__':
     print('Program paused. Press enter to continue.\n')
     # pause_func()
 
-    a = 1
+    # ================== Part 7: Learning Movie Ratings ====================
+    print('\nTraining collaborative filtering...\n')
+    data = load_mat_file('./data/ex8_movies.mat')
+    #  Y is a 1682x943 matrix, containing ratings (1-5) of 1682 movies by
+    #  943 users
+    #
+    #  R is a 1682x943 matrix, where R(i,j) = 1 if and only if user j gave a
+    #  rating to movie i
+    Y = data['Y']
+    R = data['R']
+    # Add our own ratings to the data matrix
+    Y = np.hstack((my_ratings, Y))
+    R = np.hstack(((my_ratings != 0) + 0, R))
+
+    # Normalize Ratings
+    Ynorm, Ymean = normalize_ratings(Y, R)
+
+    # Useful Values
+    num_users = Y.shape[1]
+    num_movies = Y.shape[0]
+    num_features = 10
+
+    # Set Initial Parameters (Theta, X)
+    X = np.random.randn(num_movies, num_features)
+    Theta = np.random.randn(num_users, num_features)
+
+    initial_parameters = np.hstack(
+        (np.ravel(X, order='F'), np.ravel(Theta, order='F'))
+    )
+
+    # Set Regularization
+    movie_lambda = 10
+    result = my_fminunc_rcmd(
+        initial_parameters, Ynorm, Ymean, num_users, num_movies, num_features, movie_lambda
+    )
+    result_X = result['x']
+    X = np.reshape(result_X[0:num_movies * num_features], (num_movies, num_features), order='F')
+    Theta = np.reshape(result_X[num_movies * num_features:], (num_users, num_features), order='F')
+
+    print('Recommender system learning completed.\n')
+    print('Program paused. Press enter to continue.\n')
+    # pause_func()
+
+    # ================== Part 8: Recommendation for you ====================
+    # After training the model, you can now make recommendations by computing
+    # the predictions matrix.
+
+    p = np.dot(X, Theta.T)
+    my_predictions = p[:, 0].reshape((p.shape[0], 1)) + Ymean
+    ix = np.argsort(-my_predictions, axis=0)
+    print('\nTop recommendations for you:\n')
+    for i in range(10):
+        j = ix[i]
+        print('Predicting rating %.1f for movie %s\n' %
+              (my_predictions[j][0], movieList[j]))
+
+    print('\n\nOriginal ratings provided:\n')
+    for i in range(len(my_ratings)):
+        if my_ratings[i] > 0:
+            print('Rated %d for %s\n' % (my_ratings[i][0], movieList[i]))
